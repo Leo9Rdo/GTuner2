@@ -1,0 +1,33 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="Tuner.SelectDeviceWindow"
+        Title="Select Device" Height="300" Width="400" ResizeMode="NoResize">
+	<Grid HorizontalAlignment="Center" Width="400" Height="284" VerticalAlignment="Top">
+		<Grid.Background>
+			<ImageBrush Stretch="Fill" ImageSource="/фон.jpg"/>
+		</Grid.Background>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="2*"/>
+			<ColumnDefinition Width="9*"/>
+			<ColumnDefinition Width="0*"/>
+			<ColumnDefinition Width="79*"/>
+			<ColumnDefinition Width="238*"/>
+			<ColumnDefinition Width="55*"/>
+			<ColumnDefinition Width="0*"/>
+			<ColumnDefinition Width="17*"/>
+		</Grid.ColumnDefinitions>
+		<ListBox x:Name="deviceNamesListBox" HorizontalAlignment="Left" IsEnabled="True"	 VerticalAlignment="Bottom" Margin="5,0,0,142" Height="114" Width="380" av:ItemsSource="{av:SampleData ItemCount=5}" Background="{x:Null}" BorderBrush="{x:Null}" FontFamily="Viner Hand ITC" FontSize="20" Grid.ColumnSpan="7" Grid.Column="1"/>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="73,244,0,0" Grid.Column="4" Height="30" Width="68"/>
+		<Button Content="OK" Click="OKButton_Click" x:Name="OK" IsEnabled="True" RenderTransformOrigin="0.672,0.634" Grid.Column="4" Margin="21,163,0,0" HorizontalAlignment="Left" Width="62" Height="20" VerticalAlignment="Top" Foreground="White" BorderBrush="Black">
+			<Button.Background>
+				<ImageBrush ImageSource="/фон.jpg" Stretch="None"/>
+			</Button.Background>
+		</Button>
+		<Button Content="Cancel" Click="CancelButton_Click" Margin="103,163,0,0" x:Name="Cancel" IsEnabled="True" Grid.Column="4" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Width="61" Foreground="White" BorderBrush="Black">
+			<Button.Background>
+				<ImageBrush Stretch="None" ImageSource="/фон.jpg"/>
+			</Button.Background>
+		</Button>
+	</Grid>
+</Window>

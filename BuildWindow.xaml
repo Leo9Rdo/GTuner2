@@ -1,0 +1,54 @@
+﻿<Window x:Class="Tuner.BuildWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tuner"
+        mc:Ignorable="d"
+        Title="BuildWindow" Height="343" Width="488">
+
+	<Window.Resources>
+		<Style TargetType="TextBox">
+			<Setter Property="OverridesDefaultStyle" Value="True"/>
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate TargetType="TextBox">
+						<Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="True">
+							<ScrollViewer Margin="0"
+                                          x:Name="PART_ContentHost"/>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</Window.Resources>
+
+	<Grid Margin="0,0,0,-6">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="93*"/>
+			<ColumnDefinition Width="36*"/>
+			<ColumnDefinition Width="115*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.Background>
+			<ImageBrush ImageSource="/фон.jpg"/>
+		</Grid.Background>
+		<ComboBox x:Name="ComboBoxBuild" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged" BorderBrush="White">
+			<ComboBox.Background>
+				<ImageBrush ImageSource="/фон.jpg" Stretch="None"/>
+			</ComboBox.Background>
+			<ComboBoxItem Content="E standart" Tag="String     Note     Frequency, Hz \n    1            e1         329,63\n    2            b           246,94\n    3            g           196,00\n    4            d           146,83\n    5            A           110,00\n    6            E            82,41"/>
+			<ComboBoxItem Content="Open D" Tag="String     Note     Frequency, Hz \n    1            d1         293,66\n    2            a           220,00\n    3            f#          185,00\n    4            d           147,83\n    5            A           110,00\n    6            D           73,91"/>
+			<ComboBoxItem Content="Drop D" Tag="String     Note     Frequency, Hz \n    1            e1         329,63\n    2            b           246,94\n    3            g           196,00\n    4            d           146,83\n    5            A           110,00\n    6            D           73,91"/>
+			<ComboBoxItem Content="Open C" Tag="String     Note     Frequency, Hz \n    1            e1         329,63\n    2            c1         261,63\n    3            g          196,00\n    4            c           130,81\n    5            G          97,999\n    6            C          65,406"/>
+			<ComboBoxItem Content="Drop B" Tag="String     Note     Frequency, Hz \n    1            d1         293,66\n    2            a           220,00\n    3            g           196,00\n    4            d           147,83\n    5            A           110,00\n    6            D           73,91"/>
+
+		</ComboBox>
+
+		<TextBox x:Name="BuildText" IsReadOnly="True" HorizontalAlignment="Left" VerticalAlignment="Top" Width="282" Height="220" Margin="103,69,0,0" Grid.ColumnSpan="3" FontSize="18" BorderBrush="{x:Null}" Cursor="Arrow" Foreground="White"/>
+
+
+	</Grid>
+</Window>
